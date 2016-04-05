@@ -17,7 +17,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 7
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -41,6 +41,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4") as? Menu5TableViewCell
             
             return cell4!
+        } else if indexPath.row == 5 {
+            let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5")
+            
+            return cell5!
+        } else if indexPath.row == 6 {
+            let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6") as? Menu7TableViewCell
+            
+            return cell6!
         } else {
             let cellNull = tableView.dequeueReusableCellWithIdentifier("tableCellNull")
             
@@ -58,6 +66,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else if indexPath.row == 3 {
             return 23
         } else if indexPath.row == 4 {
+            return 340
+        } else if indexPath.row == 5 {
+            return 23
+        } else if indexPath.row == 6 {
             return 340
         } else {
             return 10
