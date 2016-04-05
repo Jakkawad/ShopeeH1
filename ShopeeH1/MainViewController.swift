@@ -30,7 +30,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             return cell1!
         } else if indexPath.row == 2 {
-            let cell2 = tableView.dequeueReusableCellWithIdentifier("tableCell2")
+            let cell2 = tableView.dequeueReusableCellWithIdentifier("tableCell2") as? Menu3TableViewCell
             
             return cell2!
         } else if indexPath.row == 3 {
@@ -38,13 +38,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             return cell3!
         } else if indexPath.row == 4 {
-            let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4")
+            let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4") as? Menu5TableViewCell
             
             return cell4!
         } else {
             let cellNull = tableView.dequeueReusableCellWithIdentifier("tableCellNull")
             
             return cellNull!
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 100
+        } else if indexPath.row == 1 {
+            return 23
+        } else if indexPath.row == 2 {
+            return 100
+        } else if indexPath.row == 3 {
+            return 23
+        } else if indexPath.row == 4 {
+            return 340
+        } else {
+            return 10
         }
     }
     override func viewDidLoad() {
